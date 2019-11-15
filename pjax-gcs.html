@@ -11,6 +11,8 @@
 <script src="https://cdn.jsdelivr.net/npm/pjax-api@latest"></script>
 <script src="https://cse.google.com/cse.js?cx=014994922126240360327:fjvgx6f8dju"></script>
 <script>
+const gname = (new Date()).getTime().toString(36) 
+ 
 const { Pjax } = require('pjax-api')
 
 const pjax = new Pjax({
@@ -33,7 +35,7 @@ const search = () => {
     window.google.search.cse.element.render({
       div: "searchResult",
       tag: "searchresults-only",
-      gname: (new Date()).getTime().toString(36)
+      gname
     })
   }
 }
