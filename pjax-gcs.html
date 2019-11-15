@@ -16,7 +16,12 @@ const { Pjax } = require('pjax-api')
 const pjax = new Pjax({
   areas: [
     "#container"
-  ]
+  ],
+  update: {
+    css: false,
+    head: "meta",
+    script: false
+  }
 })
 
 const search = () => {
