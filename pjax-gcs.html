@@ -1,0 +1,36 @@
+<!doctype html>
+<div id="container">
+  <div>
+    <input type="text" id="input">
+    <button id="button">Search</button>
+  </div>
+
+  <div id="searchResult"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/pjax-api@latest"></script>
+<script src="https://cse.google.com/cse.js?cx=014994922126240360327:fjvgx6f8dju"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.0/qs.min.js"><</script>>
+<script>
+import Pjax from 'pjax-api'
+
+const pjax = new Pjax({
+  areas: [
+    "#container"
+  ]
+})
+
+document.addEventListener("pjax:ready", () => {
+  document.getElementById("button").onclick = () => {
+    pjax.replace(`/?q=${encodeURIComponent(document.getElementById("input").value)}`)
+  }
+  
+  if (qs.parse(location.search, { ignoreQueryPrefix: true }).q) {
+    window.google.search.cse.element.render({
+      div: "searchResult",
+      tag: "searchresults-only",
+      gname: (new Date()).getTime().toString(36)
+    })
+  }
+})
+</script>
