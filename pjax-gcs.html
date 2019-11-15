@@ -10,7 +10,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/pjax-api@latest"></script>
 <script src="https://cse.google.com/cse.js?cx=014994922126240360327:fjvgx6f8dju"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.0/qs.min.js"></script>
 <script>
 const { Pjax } = require('pjax-api')
 
@@ -24,8 +23,8 @@ const search = () => {
   document.getElementById("button").onclick = () => {
     pjax.replace(`/?q=${encodeURIComponent(document.getElementById("input").value)}`)
   }
-  
-  if (qs.parse(location.search, { ignoreQueryPrefix: true }).q) {
+
+  if ((new URLSearchParams(location.search)).get("q")) {
     window.google.search.cse.element.render({
       div: "searchResult",
       tag: "searchresults-only",
