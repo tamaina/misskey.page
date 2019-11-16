@@ -27,6 +27,8 @@ const pjax = new Pjax({
 })
 
 const search = () => {
+  console.log(location.search)  
+
   document.getElementById("button").onclick = () => {
     pjax.replace(`?q=${encodeURIComponent(document.getElementById("input").value)}`)
   }
