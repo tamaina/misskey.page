@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: misskey.page
+Token: 7e321a552bd3dd2fb963d3b5d41914ead6bddddd19f425cd3724754bdf15d52e
